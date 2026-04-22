@@ -47,8 +47,8 @@ export default function Preloader() {
                 }}
               >
                 <h1 
-                  className="text-7xl md:text-9xl font-light tracking-[0.4em] text-[#E7B366] leading-tight text-center"
-                  style={{ fontFamily: "'Cinzel', serif" }}
+                  className="text-7xl md:text-9xl font-extralight tracking-[0.4em] leading-tight text-center bg-gradient-to-b from-[#E7B366] via-[#FBF2C0] to-[#B38728] bg-clip-text text-transparent"
+                  style={{ fontFamily: "var(--font-serif)" }}
                 >
                   ARCAM
                 </h1>
@@ -63,7 +63,7 @@ export default function Preloader() {
               className="flex flex-col items-center gap-6"
             >
               <div className="h-px w-64 bg-gradient-to-r from-transparent via-[#E7B366]/20 to-transparent" />
-              <p className="text-[#E7B366]/30 text-[10px] tracking-[0.8em] font-bold uppercase">
+              <p className="text-[#E7B366]/40 text-[10px] tracking-[1em] font-light uppercase">
                 Digital Legacy · Est. 2026
               </p>
             </motion.div>

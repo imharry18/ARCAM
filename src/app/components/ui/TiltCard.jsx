@@ -11,8 +11,8 @@ export default function TiltCard({ children, className = "" }) {
     if (!el) return;
     
     const r = el.getBoundingClientRect();
-    const x = ((e.clientX - r.left) / r.width - 0.5) * 15;
-    const y = ((e.clientY - r.top) / r.height - 0.5) * -15;
+    const x = ((e.clientX - r.left) / r.width - 0.5) * 5;
+    const y = ((e.clientY - r.top) / r.height - 0.5) * -5;
     
     setTransform(`perspective(1000px) rotateX(${y}deg) rotateY(${x}deg) scale(1.02)`);
   };

@@ -19,11 +19,11 @@ export default function Marquee({ items, speed = 40, reverse = false }) {
         {[...items, ...items, ...items].map((item, i) => (
           <span
             key={i}
-            className="text-sm md:text-lg font-bold tracking-[0.4em] uppercase text-white/20 flex items-center gap-12 md:gap-24"
-            style={{ fontFamily: "'Cinzel', serif" }}
+            className="text-sm md:text-base font-medium tracking-[0.5em] uppercase text-white/70 flex items-center gap-12 md:gap-24 hover:text-white transition-colors duration-500"
+            style={{ fontFamily: "var(--font-serif)" }}
           >
             {item}
-            <span className="text-[#E7B366] text-xl md:text-2xl opacity-50">✦</span>
+            <span className="text-[#E7B366] text-xl md:text-2xl opacity-80 scale-125">✦</span>
           </span>
         ))}
       </motion.div>
