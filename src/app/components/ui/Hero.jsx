@@ -96,20 +96,21 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center gap-6"
           >
             <motion.a
-              href="/contact"
-              whileHover={{ scale: 1.05, y: -4 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 rounded-2xl bg-[#E7B366] text-black font-semibold text-xs tracking-[0.3em] uppercase hover:bg-white transition-all duration-500 shadow-[0_20px_60px_rgba(231,179,102,0.3)]"
+              href="/services"
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-10 py-5 rounded-2xl bg-[#E7B366] text-black font-bold text-xs tracking-[0.3em] uppercase transition-all duration-500 hover:shadow-[0_20px_60px_rgba(231,179,102,0.3)] relative overflow-hidden group"
             >
-              Start Project
+              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+              <span className="relative z-10">Start Project</span>
             </motion.a>
             <motion.a
-              href="/#work"
-              whileHover={{ scale: 1.05, y: -4 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 rounded-2xl bg-white/[0.05] border border-white/10 text-white font-semibold text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-black transition-all duration-500 backdrop-blur-md"
+              href="/work"
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-10 py-5 rounded-2xl bg-white/[0.03] border border-white/10 text-white font-bold text-xs tracking-[0.3em] uppercase hover:bg-white/10 transition-all duration-500 backdrop-blur-md hover:border-white/30"
             >
-              Examine Work
+              Portfolio
             </motion.a>
           </motion.div>
 

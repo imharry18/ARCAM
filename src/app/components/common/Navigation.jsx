@@ -57,7 +57,7 @@ export default function Navigation() {
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
     { label: 'Services', href: '/services' },
-    { label: 'Work', href: '/#work' },
+    { label: 'Portfolio', href: '/work' },
     { label: 'Contact', href: '/contact' },
   ];
 
@@ -122,12 +122,14 @@ export default function Navigation() {
 
             {/* CTA Button */}
             <motion.a
-              href="/contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="hidden md:flex items-center px-8 py-3 rounded-full bg-white text-black font-semibold text-xs tracking-[0.2em] uppercase hover:bg-[#E7B366] hover:text-black transition-all duration-500 shadow-[0_10px_30px_rgba(255,255,255,0.1)]"
+              href="/services"
+              whileHover={{ scale: 1.02, y: -1 }}
+              whileTap={{ scale: 0.98 }}
+              className="hidden md:flex items-center px-8 py-3.5 rounded-full bg-[#E7B366] text-black font-bold text-[10px] tracking-[0.2em] uppercase transition-all duration-500 hover:shadow-[0_10px_40px_rgba(231,179,102,0.3)] relative overflow-hidden group"
             >
-              Start Project
+              {/* Shimmer Effect */}
+              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+              <span className="relative z-10">Start Project</span>
             </motion.a>
 
             {/* Mobile Menu Toggle */}
