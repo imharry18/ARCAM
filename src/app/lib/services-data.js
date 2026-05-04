@@ -1,4 +1,4 @@
-import { Rocket, BarChart3, Crown, Coins, Shield, Zap, Search, PenTool, Layout, Layers } from 'lucide-react';
+import { Rocket, BarChart3, Crown, Shield, Zap, Search, Layout, Layers, RefreshCw } from 'lucide-react';
 
 export const SERVICE_TIERS = [
   {
@@ -13,9 +13,11 @@ export const SERVICE_TIERS = [
       '5–7 page responsive website',
       'Clean, modern design',
       'Mobile optimization',
-      'Lead capture system',
+      'Lead capture system (forms / WhatsApp integration)',
       'Basic SEO setup',
       'Speed optimization',
+      '1 revision cycle',
+      'Hosting and Deployment'
     ],
   },
   {
@@ -31,14 +33,17 @@ export const SERVICE_TIERS = [
       '10–20 page custom website',
       'Conversion-focused UI/UX',
       'Strategic site architecture',
-      'CMS integration',
+      'SEO-ready structure',
+      'CMS integration (easy content management)',
       'Analytics & tracking setup',
+      'Landing pages for campaigns',
       '2–3 revision cycles',
+      'Hosting and Deployment'
     ],
   },
   {
     id: 'tier-3',
-    title: 'Authority Builder',
+    title: 'Authority Builder System',
     subtitle: 'Tier III',
     price: 250000,
     description: 'For brands looking to dominate their market.',
@@ -47,65 +52,80 @@ export const SERVICE_TIERS = [
     features: [
       'Complete brand identity system',
       'Fully custom UI/UX design',
-      'Advanced interactions',
+      'Advanced interactions & animations',
       'Conversion funnel design',
       'High-impact copywriting',
+      'SEO strategy & content structure',
       'CRM & automation integration',
+      'Hosting and Deployment'
     ],
   },
   {
     id: 'tier-4',
-    title: 'Revenue Architecture',
-    subtitle: 'Tier IV',
-    price: 500000,
-    description: 'For businesses scaling aggressively.',
-    icon: Coins,
+    title: 'Growth Retainer',
+    subtitle: 'Ongoing Growth Support',
+    price: 15000,
+    description: 'Continuous optimization & performance improvement.',
+    icon: RefreshCw,
     image: '/images/services/tier-4.png',
     features: [
-      'End-to-end website & funnel ecosystem',
-      'Multi-channel frameworks',
-      'A/B testing setup',
-      'Advanced analytics',
-      'Conversion roadmap',
+      'Website updates & enhancements',
+      'Conversion optimization (CRO)',
+      'SEO improvements',
+      'Landing page creation',
+      'Performance monitoring'
     ],
   },
 ];
 
 export const ADDONS = [
   {
-    id: 'seo-advanced',
-    title: 'Advanced SEO Engine',
-    price: 25000,
-    description: 'Deep keyword research, technical SEO audit, and content strategy.',
+    id: 'addon-architecture',
+    title: 'Strategic site architecture',
+    price: 15000,
+    description: 'A la Carte Item',
+    icon: Layout,
+  },
+  {
+    id: 'addon-seo-structure',
+    title: 'SEO-ready structure',
+    price: 12000,
+    description: 'A la Carte Item',
     icon: Search,
   },
   {
-    id: 'motion-cinematic',
-    title: 'Cinematic Motion Pack',
+    id: 'addon-analytics',
+    title: 'Analytics & tracking setup',
+    price: 10000,
+    description: 'A la Carte Item',
+    icon: BarChart3,
+  },
+  {
+    id: 'addon-revisions',
+    title: 'Increase number of revision cycles',
+    price: 5000,
+    description: 'Per cycle',
+    icon: RefreshCw,
+  },
+  {
+    id: 'addon-interactions',
+    title: 'Advanced interactions & animations',
     price: 35000,
-    description: 'Bespoke WebGL and scroll-triggered animations.',
+    description: 'A la Carte Item',
     icon: Zap,
   },
   {
-    id: 'copy-premium',
-    title: 'Premium Copywriting',
-    price: 15000,
-    description: 'Strategic conversion-focused copy (per 5 pages).',
-    icon: PenTool,
+    id: 'addon-seo-strategy',
+    title: 'SEO strategy & content structure',
+    price: 25000,
+    description: 'A la Carte Item',
+    icon: Search,
   },
   {
-    id: 'crm-automation',
-    title: 'CRM & Automation',
+    id: 'addon-crm',
+    title: 'CRM & automation integration',
     price: 45000,
-    description: 'Full integration with HubSpot, Salesforce, or custom tools.',
+    description: 'A la Carte Item',
     icon: Layers,
-  },
-  {
-    id: 'maintenance-elite',
-    title: 'Elite Maintenance',
-    price: 10000,
-    description: 'Monthly priority support and performance optimization.',
-    icon: Shield,
-    isMonthly: true,
   },
 ];

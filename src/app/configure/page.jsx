@@ -14,11 +14,14 @@ function ConfiguratorContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const initialTierId = searchParams.get('tier') || 'tier-1';
+  const initialAddonIds = searchParams.get('addons')?.split(',') || [];
 
   const [selectedTier, setSelectedTier] = useState(
     SERVICE_TIERS.find(t => t.id === initialTierId) || SERVICE_TIERS[0]
   );
-  const [selectedAddons, setSelectedAddons] = useState([]);
+  
+  const initialAddons = initialAddonIds.map(id => ADDONS.find(a => a.id === id)).filter(Boolean);
+  const [selectedAddons, setSelectedAddons] = useState(initialAddons);
   const [totalPrice, setTotalPrice] = useState(selectedTier.price);
   
   // State for the tier details modal
@@ -38,7 +41,13 @@ function ConfiguratorContent() {
   };
 
   const handleFinalize = () => {
-    router.push('/contact');
+    const queryParams = new URLSearchParams();
+    queryParams.set('tier', selectedTier.id);
+    if (selectedAddons.length > 0) {
+      const addonIds = selectedAddons.map(a => a.id).join(',');
+      queryParams.set('addons', addonIds);
+    }
+    router.push(`/contact?${queryParams.toString()}`);
   };
 
   return (
@@ -60,10 +69,18 @@ function ConfiguratorContent() {
                 {SERVICE_TIERS.map((tier) => {
                   const isSelected = selectedTier.id === tier.id;
                   return (
-                  <button
+                  <div
                     key={tier.id}
                     onClick={() => setSelectedTier(tier)}
-                    className={`relative text-left rounded-[2.5rem] overflow-hidden transition-all duration-700 group h-[22rem] ${
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setSelectedTier(tier);
+                      }
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    className={`relative text-left rounded-[2.5rem] overflow-hidden transition-all duration-700 group h-[22rem] cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#E7B366]/50 ${
                       isSelected 
                         ? 'border border-[#E7B366]/50 shadow-[0_0_50px_rgba(231,179,102,0.15)] scale-[1.02]' 
                         : 'border border-white/5 hover:border-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.02)]'
@@ -115,7 +132,7 @@ function ConfiguratorContent() {
                         </button>
                       </div>
                     </div>
-                  </button>
+                  </div>
                 )})}
               </div>
             </section>
@@ -243,11 +260,6 @@ function ConfiguratorContent() {
                   <span className="relative z-10">Finalize Architecture</span>
                   <ArrowRight size={14} className="relative z-10 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
-                
-                <div className="mt-6 flex items-center justify-center gap-2 text-white/30">
-                  <ShieldCheck size={14} />
-                  <span className="text-[8px] uppercase tracking-[0.2em] font-medium">Secure Configuration Environment</span>
-                </div>
               </div>
             </div>
           </div>
@@ -266,23 +278,22 @@ function ConfiguratorContent() {
               onClick={() => setActiveModalTier(null)}
               className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"
             />
-            
-            <motion.div 
+               <motion.div 
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-xl bg-[#0A0A0A] border border-white/10 rounded-[2.5rem] p-8 shadow-[0_0_100px_rgba(0,0,0,0.8)] overflow-hidden max-h-full overflow-y-auto"
+              className="relative w-full max-w-xl bg-[#0A0A0A] border border-white/10 rounded-[2.5rem] shadow-[0_0_100px_rgba(0,0,0,0.8)] overflow-hidden max-h-[85vh] flex flex-col"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[#E7B366]/5 to-transparent pointer-events-none" />
               
               <button 
                 onClick={() => setActiveModalTier(null)}
-                className="absolute top-6 right-6 md:top-8 md:right-8 p-3 rounded-full bg-white/5 text-white/50 hover:text-white hover:bg-white/10 transition-colors z-20"
+                className="absolute top-6 right-6 md:top-8 md:right-8 p-3 rounded-full bg-white/5 text-white/50 hover:text-white hover:bg-white/10 transition-colors z-30"
               >
                 <X size={20} />
               </button>
 
-              <div className="relative z-10">
+              <div className="relative z-10 overflow-y-auto p-8 md:p-12 custom-scrollbar">
                 <div className="flex items-center gap-6 mb-8">
                   <div className="p-5 rounded-2xl bg-[#E7B366]/10 text-[#E7B366] border border-[#E7B366]/20">
                     {activeModalTier.icon && (() => {
