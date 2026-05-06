@@ -5,6 +5,7 @@ import Contact from '../components/ui/Contact';
 import Footer from '../components/ui/Footer';
 import { motion } from 'framer-motion';
 import { Spotlight } from '../components/ui/Spotlight';
+import { Suspense } from 'react';
 
 export default function ContactPage() {
   return (
@@ -36,7 +37,9 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <Contact />
+      <Suspense fallback={<div className="h-40 flex items-center justify-center text-[#E7B366] uppercase tracking-widest text-[10px]">Loading Interface...</div>}>
+        <Contact />
+      </Suspense>
       
       <Footer />
     </main>
