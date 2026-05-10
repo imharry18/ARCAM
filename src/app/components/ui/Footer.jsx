@@ -75,10 +75,9 @@ export default function Footer() {
   ];
 
   const companyLinks = [
-    { name: 'Our Story', url: '#' },
-    { name: 'Philosophy', url: '#' },
-    { name: 'Insights', url: '#' },
-    { name: 'Careers', url: '#' },
+    { name: 'About Us', url: '/about' },
+    { name: 'Terms & Conditions', url: '#' },
+    { name: 'Privacy Policy', url: '#' },
   ];
 
   return (
@@ -102,14 +101,14 @@ export default function Footer() {
                 <Image src="/logo.png" alt="Arcam Logo" fill className="object-contain" />
               </div>
               <div className="flex flex-col">
-                <span className="text-2xl font-light tracking-[0.4em] text-[#E7B366] leading-none" style={{ fontFamily: "'Cinzel', serif" }}>
+                <span className="text-2xl font-light tracking-[0.4em] text-[#E7B366] leading-none" style={{ fontFamily: "var(--font-serif)" }}>
                   ARCAM
                 </span>
-                <span className="text-[9px] font-bold text-white/20 uppercase tracking-[0.4em] mt-2">Bespoke Digital Engineering</span>
+                <span className="text-[9px] font-bold text-[#E7B366] uppercase tracking-[0.4em] mt-2">Bespoke Web Development</span>
               </div>
             </div>
-            <p className="text-sm text-white/40 leading-relaxed font-light tracking-wide mb-10 max-w-sm">
-              Crafting elite digital ecosystems for world-class brands. We combine avant-garde design with high-performance engineering to build the future of luxury commerce.
+            <p className="text-sm text-white/70 leading-relaxed font-light tracking-wide mb-10 max-w-sm">
+              Bespoke digital presences designed to endure. Timeless by design.
             </p>
             <div className="flex gap-5">
               {socialLinks.map((social) => {
@@ -120,7 +119,7 @@ export default function Footer() {
                     href={social.url}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all duration-300 bg-white/[0.02]"
+                    className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:border-[#E7B366] transition-all duration-300 bg-white/[0.02]"
                     title={social.name}
                   >
                     <Icon size={18} strokeWidth={1.5} />
@@ -137,13 +136,13 @@ export default function Footer() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="md:col-span-3 lg:col-span-2"
           >
-            <h4 className="text-[10px] font-bold text-white/40 mb-8 uppercase tracking-[0.3em]">Directory</h4>
+            <h4 className="text-[10px] font-bold text-[#E7B366] mb-8 uppercase tracking-[0.3em]">Directory</h4>
             <div className="space-y-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.url}
-                  className="block text-sm text-white/50 hover:text-[#E7B366] transition-all duration-300 font-light"
+                  className="block text-sm text-white/70 hover:text-white transition-all duration-300 font-light"
                 >
                   {link.name}
                 </a>
@@ -158,13 +157,13 @@ export default function Footer() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="md:col-span-3 lg:col-span-2"
           >
-            <h4 className="text-[10px] font-bold text-white/40 mb-8 uppercase tracking-[0.3em]">Agency</h4>
+            <h4 className="text-[10px] font-bold text-[#E7B366] mb-8 uppercase tracking-[0.3em]">Agency</h4>
             <div className="space-y-4">
               {companyLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.url}
-                  className="block text-sm text-white/50 hover:text-[#E7B366] transition-all duration-300 font-light"
+                  className="block text-sm text-white/70 hover:text-white transition-all duration-300 font-light"
                 >
                   {link.name}
                 </a>
@@ -179,13 +178,13 @@ export default function Footer() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="md:col-span-5 lg:col-span-4"
           >
-            <h4 className="text-[10px] font-bold text-white/40 mb-8 uppercase tracking-[0.3em]">General Inquiries</h4>
+            <h4 className="text-[10px] font-bold text-[#E7B366] mb-8 uppercase tracking-[0.3em]">General Inquiries</h4>
             <p className="text-xl font-light text-white mb-4 hover:text-[#E7B366] transition-all duration-300 cursor-pointer">
-              hello@arcam.design
+              hello@arcamproject.com
             </p>
-            <p className="text-sm text-white/30 font-light tracking-wide leading-relaxed">
-              Based in the United Arab Emirates.<br />
-              Global operations, available for select projects.
+            <p className="text-sm text-white/60 font-light tracking-wide leading-relaxed">
+              Based in India.<br />
+              Remote-first, serving clients globally.
             </p>
           </motion.div>
         </div>
@@ -198,13 +197,11 @@ export default function Footer() {
           className="pt-4 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6"
         >
           <div className="flex flex-col md:flex-row items-center gap-8">
-            <p className="text-[10px] text-white/20 font-bold uppercase tracking-[0.2em]">
-              © 2026 Arcam Digital Engineering. All rights reserved.
+            <p className="text-[10px] text-white/40 font-bold uppercase tracking-[0.2em]">
+              © 2025 Arcam Project. All rights reserved.
             </p>
           </div>
-          <div className="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-white/20">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+          <div className="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
           </div>
         </motion.div>
       </div>

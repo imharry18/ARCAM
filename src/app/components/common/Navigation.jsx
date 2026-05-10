@@ -33,7 +33,7 @@ export default function Navigation() {
   }, [mobileOpen]);
 
   useEffect(() => {
-    const sections = navItems.map(item => item.href.replace('#', ''));
+    const sections = navItems.filter(item => item.href.includes('#')).map(item => item.href.split('#')[1]);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -54,10 +54,11 @@ export default function Navigation() {
   }, []);
 
   const navItems = [
-    { label: 'Services', href: '#services' },
-    { label: 'Solutions', href: '#solutions' },
-    { label: 'Work', href: '#work' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    { label: 'Services', href: '/services' },
+    { label: 'Work', href: '/#work' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -94,7 +95,7 @@ export default function Navigation() {
                 />
               </div>
               <div className="hidden lg:flex flex-col ml-1">
-                <span className="text-lg md:text-xl font-light tracking-[0.4em] text-[#E7B366] leading-none" style={{ fontFamily: "'Cinzel', serif" }}>
+                <span className="text-lg md:text-xl font-light tracking-[0.4em] text-[#E7B366] leading-none" style={{ fontFamily: "var(--font-serif)" }}>
                   ARCAM
                 </span>
               </div>
@@ -110,7 +111,7 @@ export default function Navigation() {
                     href={item.href}
                     whileHover={{ scale: 1.05 }}
                     className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
-                      isActive ? 'text-white' : 'text-white/40 hover:text-white/80'
+                      isActive ? 'text-white' : 'text-white/70 hover:text-white'
                     }`}
                   >
                     <span className="relative z-10">{item.label}</span>
@@ -121,10 +122,10 @@ export default function Navigation() {
 
             {/* CTA Button */}
             <motion.a
-              href="#contact"
+              href="/contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="hidden md:flex items-center px-8 py-3 rounded-full bg-white text-black font-bold text-xs tracking-[0.2em] uppercase hover:bg-[#E7B366] hover:text-white transition-all duration-500 shadow-[0_10px_30px_rgba(255,255,255,0.1)]"
+              className="hidden md:flex items-center px-8 py-3 rounded-full bg-white text-black font-semibold text-xs tracking-[0.2em] uppercase hover:bg-[#E7B366] hover:text-black transition-all duration-500 shadow-[0_10px_30px_rgba(255,255,255,0.1)]"
             >
               Start Project
             </motion.a>
@@ -133,7 +134,7 @@ export default function Navigation() {
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden p-2 rounded-full bg-white/5 border border-white/10 text-white/70"
+              className="md:hidden p-2 rounded-full bg-white/5 border border-white/10 text-white"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileOpen ? (
@@ -152,7 +153,7 @@ export default function Navigation() {
                 initial={{ opacity: 0, y: 10, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                className="absolute top-full left-0 right-0 mx-auto mt-4 w-[calc(100vw-3rem)] max-w-[340px] rounded-[2.5rem] bg-black/90 backdrop-blur-3xl border border-white/10 p-4 shadow-2xl z-[120]"
+                className="absolute top-full left-0 right-0 mx-auto mt-4 w-[calc(100vw-3rem)] max-w-[340px] rounded-[2.5rem] bg-black/90 backdrop-blur-3xl border border-white/20 p-4 shadow-2xl z-[120]"
               >
                 <div className="flex flex-col gap-2">
                   {navItems.map((item, i) => (
@@ -163,9 +164,9 @@ export default function Navigation() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.05 }}
                       onClick={() => setMobileOpen(false)}
-                      className="flex items-center justify-center px-6 py-4 rounded-2xl bg-white/[0.03] hover:bg-white/[0.08] transition-colors group"
+                      className="flex items-center justify-center px-6 py-4 rounded-2xl bg-white/[0.05] hover:bg-white/[0.1] transition-colors group"
                     >
-                      <span className="text-sm font-semibold text-white/70 group-hover:text-white tracking-[0.2em] uppercase">{item.label}</span>
+                      <span className="text-sm font-semibold text-white group-hover:text-[#E7B366] tracking-[0.2em] uppercase transition-colors">{item.label}</span>
                     </motion.a>
                   ))}
                 </div>

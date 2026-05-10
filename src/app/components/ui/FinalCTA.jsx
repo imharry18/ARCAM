@@ -67,7 +67,7 @@ export default function FinalCTA() {
           className="max-w-5xl mx-auto"
         >
           
-          <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-light tracking-tighter text-white mb-12 leading-[0.85]" style={{ fontFamily: "'Cinzel', serif" }}>
+          <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-extralight tracking-tighter text-white mb-12 leading-[0.85] uppercase" style={{ fontFamily: "var(--font-serif)" }}>
             Build Your<br />
             <em className="text-[#E7B366] italic not-italic">Legacy</em>
           </h2>
@@ -79,20 +79,22 @@ export default function FinalCTA() {
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-8"
           >
-            <motion.button
+            <motion.a
+              href="/contact"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="px-12 py-6 rounded-2xl bg-white text-black font-black text-xs tracking-[0.3em] uppercase hover:bg-[#E7B366] transition-all duration-700 shadow-[0_20px_80px_rgba(255,255,255,0.15)] hover:shadow-[0_20px_80px_rgba(231,179,102,0.4)]"
+              className="px-12 py-6 rounded-2xl bg-white text-black font-semibold text-xs tracking-[0.3em] uppercase hover:bg-[#E7B366] transition-all duration-700 shadow-[0_20px_80px_rgba(255,255,255,0.15)] hover:shadow-[0_20px_80px_rgba(231,179,102,0.4)] flex items-center justify-center"
             >
               Start Project
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
+              href="/contact"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="px-12 py-6 rounded-2xl bg-white/[0.02] border border-white/5 text-white/40 font-bold text-xs tracking-[0.3em] uppercase hover:bg-[#E7B366]/5 hover:border-[#E7B366]/40 hover:text-[#E7B366] transition-all duration-700 shadow-none hover:shadow-[0_0_40px_rgba(231,179,102,0.1)]"
+              className="px-12 py-6 rounded-2xl bg-white/[0.02] border border-white/5 text-white/40 font-semibold text-xs tracking-[0.3em] uppercase hover:bg-[#E7B366]/5 hover:border-[#E7B366]/40 hover:text-[#E7B366] transition-all duration-700 shadow-none hover:shadow-[0_0_40px_rgba(231,179,102,0.1)] flex items-center justify-center"
             >
               Contact Advisory
-            </motion.button>
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>

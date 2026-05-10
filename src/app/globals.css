@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Syne:wght@400;500;600;700;800&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -17,7 +17,7 @@
   --bg-hover: #111111;
   
   /* Premium Primary Color - Gold/Metallic */
-  --primary: #D4AF37;
+  --primary: #E7B366;
   --primary-dark: #B38728;
   --primary-light: #FBF2C0;
   
@@ -27,14 +27,15 @@
   
   /* Neutral Grays */
   --text-primary: #ffffff;
-  --text-secondary: #a1a1aa;
-  --text-tertiary: #52525b;
+  --text-secondary: #d4d4d8; /* Increased visibility from a1a1aa */
+  --text-tertiary: #71717a; /* Increased visibility from 52525b */
   --border-light: #27272a;
   --border-dark: #18181b;
   
   /* Typography */
-  --font-sans: 'Outfit', sans-serif;
-  --font-serif: 'Cinzel', serif;
+  --font-sans: 'Syne', sans-serif; /* Changed from Outfit to Syne for more character */
+  --font-serif: 'Cormorant Garamond', serif; /* Changed from Cinzel to Cormorant Garamond */
+  --font-body: 'Outfit', sans-serif;
 }
 
 /* ============================================

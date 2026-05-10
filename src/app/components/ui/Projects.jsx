@@ -29,10 +29,10 @@ export default function Projects() {
             <span className="text-[10px] font-bold text-[#E7B366] tracking-[0.6em] uppercase">Selected Works</span>
             <div className="w-12 h-px bg-[#E7B366]/30" />
           </div>
-          <h2 className="text-4xl md:text-6xl lg:text-8xl font-light tracking-tighter text-white" style={{ fontFamily: "'Cinzel', serif" }}>
-            The <em className="text-[#E7B366] italic not-italic">Portfolio</em>
+          <h2 className="text-4xl md:text-6xl lg:text-8xl font-light tracking-tighter text-white" style={{ fontFamily: "var(--font-serif)" }}>
+            The <em className="text-[#E7B366] italic">Portfolio</em>
           </h2>
-          <p className="mt-4 text-sm md:text-base text-white/30 max-w-xl mx-auto font-light leading-relaxed">
+          <p className="mt-4 text-sm md:text-base text-white/70 max-w-xl mx-auto font-light leading-relaxed">
             A curated selection of high-velocity digital ecosystems engineered for the world's most ambitious brands.
           </p>
         </motion.div>
@@ -48,8 +48,8 @@ export default function Projects() {
 const ProjectContent = ({ title, description, image }) => {
   return (
     <div className="bg-[#0A0A0A] p-8 md:p-14 rounded-3xl mb-4 border border-white/5">
-      <p className="text-white/40 text-base md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
-        <span className="font-bold text-[#E7B366] mb-4 block text-3xl md:text-5xl" style={{ fontFamily: "'Cinzel', serif" }}>
+      <p className="text-white/80 text-base md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
+        <span className="font-bold text-[#E7B366] mb-4 block text-3xl md:text-5xl" style={{ fontFamily: "var(--font-serif)" }}>
           {title}
         </span>
         {description}

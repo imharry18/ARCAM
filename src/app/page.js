@@ -11,6 +11,7 @@ import Services from './components/ui/Services';
 import Process from './components/ui/Process';
 import WhyChooseUs from './components/ui/WhyChooseUs';
 import FinalCTA from './components/ui/FinalCTA';
+import Contact from './components/ui/Contact';
 import Footer from './components/ui/Footer';
 import Marquee from './components/ui/Marquee';
 
@@ -36,6 +37,8 @@ export default function Home() {
       <Process />
       
       <WhyChooseUs />
+      
+      <Contact />
       
       <FinalCTA />
       

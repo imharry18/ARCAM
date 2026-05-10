@@ -3,31 +3,38 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
+import { Award, TrendingUp, Layers, Zap, Handshake, Shield } from 'lucide-react';
 
 const benefits = [
   {
-    title: 'Elite Quality',
-    description: 'Production-grade engineering with rigorous standards.',
+    title: 'Craft over convenience',
+    description: 'We take time to get things right. Speed is never a substitute for precision.',
+    icon: Award,
   },
   {
-    title: 'High ROI',
-    description: 'Strategic decisions driven by measurable business impact.',
+    title: 'Restraint as a virtue',
+    description: 'In a world of visual noise, we believe in the power of considered space, clean lines, and purposeful design.',
+    icon: Layers,
   },
   {
-    title: 'Precision Architecture',
-    description: 'Deeply architected for exponential growth and evolution.',
+    title: 'Strategy before aesthetics',
+    description: 'Beautiful websites that do not convert are decoration. We build beauty that performs.',
+    icon: TrendingUp,
   },
   {
-    title: 'Tech Avant-Garde',
-    description: 'Harnessing the latest industry-leading technologies.',
+    title: 'Long-term thinking',
+    description: 'We are not interested in quick wins. We build foundations that support years of growth.',
+    icon: Shield,
   },
   {
-    title: 'Strategic Alliance',
-    description: 'A deep-velocity partnership for market dominance.',
+    title: 'Asset, not a cost',
+    description: 'Most businesses treat their website as a line item. The right website generates leads and compounds in value.',
+    icon: Handshake,
   },
   {
-    title: 'Resilient Design',
-    description: 'Timeless digital solutions built for market shifts.',
+    title: 'Outlast trends',
+    description: 'Considered design, clean architecture, and strategic intent produce work that endures. This is not nostalgia — it is craft.',
+    icon: Zap,
   },
 ];
 
@@ -73,11 +80,11 @@ export default function WhyChooseUs() {
           className="mb-12 md:mb-16 text-center"
         >
           <div className="flex flex-col items-center gap-4 mb-10">
-            <span className="text-[10px] font-bold text-[#E7B366] tracking-[0.6em] uppercase">Superiority Index</span>
+            <span className="text-[10px] font-bold text-[#E7B366] tracking-[0.6em] uppercase">Core Philosophy</span>
             <div className="w-12 h-px bg-[#E7B366]/30" />
           </div>
-          <h2 className="text-5xl md:text-7xl font-light tracking-tighter text-white" style={{ fontFamily: "'Cinzel', serif" }}>
-            The <em className="text-[#E7B366] italic not-italic">Arcam</em> Edge
+          <h2 className="text-5xl md:text-7xl font-light tracking-tighter text-white" style={{ fontFamily: "var(--font-serif)" }}>
+            The <em className="text-[#E7B366] italic">Arcam</em> Edge
           </h2>
         </motion.div>
 
@@ -95,14 +102,18 @@ export default function WhyChooseUs() {
               className="group relative bg-black p-10 md:p-12 hover:bg-white/[0.02] transition-all duration-700 min-h-[260px] flex flex-col justify-center"
             >
               {/* Subtle Icon Background */}
-              <div className="absolute top-8 right-8 w-12 h-12 opacity-5 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none">
-                <Image src="/logo.png" alt="Arcam" fill className="object-contain brightness-0 invert" />
+              <div className="absolute top-8 right-8 w-12 h-12 flex items-center justify-center opacity-10 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none">
+                <benefit.icon 
+                  size={40} 
+                  strokeWidth={1} 
+                  className="text-[#E7B366]" 
+                />
               </div>
 
-              <h3 className="font-medium text-2xl text-white mb-4 tracking-tight group-hover:text-[#E7B366] transition-colors duration-700" style={{ fontFamily: "'Cinzel', serif" }}>
+              <h3 className="font-medium text-2xl text-white mb-4 tracking-tight group-hover:text-[#E7B366] transition-colors duration-700" style={{ fontFamily: "var(--font-serif)" }}>
                 {benefit.title}
               </h3>
-              <p className="text-white/30 text-sm font-light leading-relaxed group-hover:text-white/60 transition-colors duration-500 max-w-[280px]">
+              <p className="text-white/70 text-sm font-light leading-relaxed group-hover:text-white transition-colors duration-500 max-w-[280px]">
                 {benefit.description}
               </p>
 

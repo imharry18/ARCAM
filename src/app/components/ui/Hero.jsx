@@ -36,7 +36,7 @@ export default function Hero() {
         <ColorBends
           colors={["#FFF176", "#FFEE58", "#E7B366"]}
           rotation={66}
-          speed={0.36}
+          speed={0.2}
           scale={0.7}
           frequency={1}
           warpStrength={1}
@@ -76,39 +76,41 @@ export default function Hero() {
           {/* Main Headline */}
           <motion.h1
             variants={itemVariants}
-            className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-light tracking-tighter mb-10 leading-[0.85] text-white"
-            style={{ fontFamily: "'Cinzel', serif" }}
+            className="text-6xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-medium tracking-tighter mb-10 leading-[0.95] text-white drop-shadow-[0_10px_30px_rgba(231,179,102,0.15)]"
+            style={{ fontFamily: "var(--font-serif)" }}
           >
-            <span className="block mb-2">Bespoke</span>
-            <span className="text-[#E7B366] italic not-italic">Digital</span>
+            <span className="block mb-2 font-light">Timeless</span>
+            <span className="text-[#E7B366] italic">by design.</span>
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="max-w-2xl text-lg md:text-xl text-white/30 font-light tracking-wide mb-14 leading-relaxed"
+            className="max-w-3xl text-lg md:text-xl text-white/70 font-light tracking-wide mb-14 leading-relaxed"
+            style={{ fontFamily: "var(--font-body)" }}
           >
-            We architect elite digital ecosystems for world-class visionaries. Exceptional engineering, delivered with surgical precision.
+            Arcam Project builds digital presences that outlast trends — architecturally precise, visually refined, and engineered to grow with the businesses they represent.
           </motion.p>
 
-          {/* CTA Group */}
           <motion.div
             variants={itemVariants}
             className="flex flex-col sm:flex-row items-center gap-6"
           >
-            <motion.button
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-10 py-5 rounded-2xl bg-white text-black font-black text-xs tracking-[0.3em] uppercase hover:bg-[#E7B366] hover:text-black transition-all duration-700 shadow-[0_20px_60px_rgba(255,255,255,0.1)]"
+            <motion.a
+              href="/contact"
+              whileHover={{ scale: 1.05, y: -4 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-5 rounded-2xl bg-[#E7B366] text-black font-semibold text-xs tracking-[0.3em] uppercase hover:bg-white transition-all duration-500 shadow-[0_20px_60px_rgba(231,179,102,0.3)]"
             >
               Start Project
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-10 py-5 rounded-2xl bg-white/[0.02] border border-white/5 text-white/40 font-bold text-xs tracking-[0.3em] uppercase hover:bg-white/[0.05] hover:text-white transition-all duration-700"
+            </motion.a>
+            <motion.a
+              href="/#work"
+              whileHover={{ scale: 1.05, y: -4 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-5 rounded-2xl bg-white/[0.05] border border-white/10 text-white font-semibold text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-black transition-all duration-500 backdrop-blur-md"
             >
               Examine Work
-            </motion.button>
+            </motion.a>
           </motion.div>
 
         </motion.div>
