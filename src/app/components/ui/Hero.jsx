@@ -32,22 +32,23 @@ export default function Hero() {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-black antialiased">
       {/* Background Shader Effect */}
-      <div className="absolute inset-0 z-0 opacity-40 [mask-image:linear-gradient(to_bottom,white_60%,transparent)]">
+      <div className="absolute inset-0 z-0 opacity-70 [mask-image:linear-gradient(to_bottom,white_60%,transparent)]">
         <ColorBends
-          colors={["#E7B366", "#B38728", "#E7B366"]}
+          colors={["#FFF176", "#FFEE58", "#E7B366"]}
           rotation={66}
-          speed={0.05}
-          scale={0.8}
-          frequency={0.1}
+          speed={0.36}
+          scale={0.7}
+          frequency={1}
           warpStrength={1}
-          mouseInfluence={0.1}
-          noise={0.24}
+          mouseInfluence={0}
+          noise={0.15}
           parallax={0}
           iterations={1}
-          intensity={1.8}
+          intensity={2.0}
           bandWidth={6}
           transparent
           autoRotate={0}
+          color="#e4d091"
         />
       </div>
 
@@ -72,12 +73,6 @@ export default function Hero() {
           animate={loaded ? "visible" : "hidden"}
           className="max-w-6xl mx-auto flex flex-col items-center"
         >
-          {/* Badge */}
-          <motion.div variants={itemVariants} className="mb-12 flex flex-col items-center gap-6">
-            <span className="text-xs font-bold text-[#E7B366] tracking-[0.8em] uppercase">Digital Engineering Studio</span>
-            <div className="w-px h-12 bg-gradient-to-b from-[#E7B366]/50 to-transparent" />
-          </motion.div>
-
           {/* Main Headline */}
           <motion.h1
             variants={itemVariants}
